@@ -3,7 +3,7 @@ import { Cart } from 'react-bootstrap-icons';
 
 function ItemListContainer() {
     return (
-        <Cart color='orange' />
+        <h1>Conteúdo</h1>
     );
 }
 
