@@ -6,43 +6,52 @@ import Navbar from 'react-bootstrap/Navbar';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
-import { Search } from 'react-bootstrap-icons';
 import Button from 'react-bootstrap/esm/Button';
-import Image from 'react-bootstrap/Image'
+import Image from 'react-bootstrap/Image';
+import { Search } from 'react-bootstrap-icons';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar() {
     return (
         <>
-            <Navbar bg="dark" data-bs-theme="dark">
+            <Navbar sticky='top' bg="dark" data-bs-theme="dark">
                 <Container>
                     <Navbar.Brand href="#home">
                         <Image className='me-3' rounded src={logo} alt='Página Inicial' />
                         Bookshelf
                     </Navbar.Brand>
                     <Nav>
-                        <InputGroup className="me-3 mb-auto ml-auto">
-                            <InputGroup.Text id="searchBox">
-                                <Search color='orange' />
-                            </InputGroup.Text>
-                            <Form.Control
-                                placeholder="Pesquisar"
-                                aria-label="search"
-                                aria-describedby="search-box"
-                            />
-                        </InputGroup>
-
-                        <Dropdown data-bs-theme="dark">
-                            <Dropdown.Toggle variant="dark">Categorias</Dropdown.Toggle>
-                            <Dropdown.Menu>
-                                <Dropdown.Item href="#/acao">Ação</Dropdown.Item>
-                                <Dropdown.Item href="#/romance">Romance</Dropdown.Item>
-                                <Dropdown.Item href="#/sifi">Si-Fi</Dropdown.Item>
-                                <Dropdown.Divider />
-                                <Dropdown.Item href="#/mais">Mais</Dropdown.Item>
-                            </Dropdown.Menu>
-                        </Dropdown>
+                        <Nav.Item>
+                            <InputGroup>
+                                <InputGroup.Text id="searchBox">
+                                    <Search color='orange' />
+                                </InputGroup.Text>
+                                <Form.Control
+                                    placeholder="Pesquisar"
+                                    aria-label="search"
+                                    aria-describedby="search-box"
+                                />
+                            </InputGroup>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Dropdown data-bs-theme="dark">
+                                <Dropdown.Toggle variant="dark">Categorias</Dropdown.Toggle>
+                                <Dropdown.Menu>
+                                    <Dropdown.Item href="#/acao">Ação</Dropdown.Item>
+                                    <Dropdown.Item href="#/romance">Romance</Dropdown.Item>
+                                    <Dropdown.Item href="#/sifi">Si-Fi</Dropdown.Item>
+                                    <Dropdown.Divider />
+                                    <Dropdown.Item href="#/mais">Mais</Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </Nav.Item>
+                        <Nav.Item className='ml-1'>
+                            <Button variant='dark'>Login</Button>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <CartWidget />
+                        </Nav.Item>
                     </Nav>
-                    <Button variant='dark'>Login</Button>
                 </Container>
             </Navbar>
         </>
